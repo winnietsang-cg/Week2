@@ -5,6 +5,7 @@
 class Vehicle {
 public:
 	Vehicle(int mph);
+	virtual ~Vehicle() = default;
 	virtual void Drive(int minutes) = 0;
 
 protected:
@@ -14,19 +15,19 @@ protected:
 class Car : Vehicle {
 public:
 	Car(int minutes) : Vehicle(minutes) { }
-	void Drive(int minutes);
+	void Drive(int minutes) override;
 };
 
 class Boat : Vehicle {
 public:
 	Boat(int minutes) : Vehicle(minutes) { }
-	void Drive(int minutes);
+	void Drive(int minutes) override;
 };
 
 class Airplane : Vehicle {
 public:
 	Airplane(int minutes) : Vehicle(minutes) { }
-	void Drive(int minutes);
+	void Drive(int minutes) override;
 };
 
 
